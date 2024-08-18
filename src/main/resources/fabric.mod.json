@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "fast-travel",
+	"version": "${version}",
+	"name": "fast-travel",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/fast-travel/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.rois2coeurs.fasttravel.Fasttravel"
+		],
+		"client": [
+			"com.rois2coeurs.fasttravel.FasttravelClient"
+		]
+	},
+	"mixins": [
+		"fast-travel.mixins.json",
+		{
+			"config": "fast-travel.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.20.4",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
