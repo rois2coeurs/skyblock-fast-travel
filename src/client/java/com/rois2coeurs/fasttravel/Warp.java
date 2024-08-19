@@ -1,13 +1,17 @@
 package com.rois2coeurs.fasttravel;
 
-import net.minecraft.client.gui.widget.ButtonWidget;
+import net.minecraft.util.Identifier;
+
+import java.util.function.Consumer;
 
 public class Warp {
-    public String Name;
-    public ButtonWidget.PressAction OnClick;
+    public String displayName;
+    public Identifier texture;
+    public Consumer<Void> onClick;
 
-    public Warp(String name, ButtonWidget.PressAction onClick) {
-        Name = name;
-        OnClick = onClick;
+    public Warp(String name, String texturePath, Consumer<Void> onClick) {
+        displayName = name;
+        texture = new Identifier("fasttravel", texturePath);
+        this.onClick = onClick;
     }
 }
